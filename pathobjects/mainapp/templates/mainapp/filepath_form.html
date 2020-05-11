@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paths</title>
+</head>
+<body>
+    <ul>
+        {% for item in file_paths %}
+            <li>
+                {{item.path}}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
