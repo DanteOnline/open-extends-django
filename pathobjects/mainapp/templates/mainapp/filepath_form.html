@@ -1,3 +1,4 @@
+{% load showpath %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,31 @@
     <title>Paths</title>
 </head>
 <body>
-    <ul>
-        {% for item in file_paths %}
-            <li>
-                {{item.path}}
-            </li>
-        {% endfor %}
-    </ul>
+<ul>
+    {% for item in file_paths %}
+    <li>
+        {{item.path|as_arrow}}
+    </li>
+    {% endfor %}
+</ul>
 
-    <hr>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Сохранить</button>
-    </form>
+<hr>
+<ul>
+    {% for item in file_paths %}
+    <li>
+        {% parts_tree item.path as tree %}
+        {% for element in tree %}
+            {{element}}
+        <br>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ul>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Сохранить</button>
+</form>
 </body>
 </html>

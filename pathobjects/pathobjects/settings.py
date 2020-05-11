@@ -119,3 +119,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+"""
+валидация форм	https://djbook.ru/rel1.8/ref/forms/validation.html
+виджеты	https://djbook.ru/rel1.8/ref/forms/widgets.html
+валидаторы моделей	https://djbook.ru/rel1.8/ref/validators.html
+Свое поле в модели	https://djbook.ru/rel1.6/howto/custom-model-fields.html
+Шаблонные теги и фильтры	https://djbook.ru/rel1.9/howto/custom-template-tags.html
+КОД С ЗАНЯТИЕ НА ГИТХАБ: https://github.com/DanteOnline/open-extends-django
+"""
